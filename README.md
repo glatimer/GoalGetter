@@ -2,7 +2,7 @@
 
 ## Setup for developers
 
-There are instructions for repo setup on your local machine in Wiki >> Setup
+There are instructions for setting up the repo on your local machine in Wiki >> Setup
 
 ## APIs
 
