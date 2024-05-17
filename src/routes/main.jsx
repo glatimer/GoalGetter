@@ -5,7 +5,7 @@ export function Main() {
   return (
     <>
       <Root />
-      <div>
+      <div id="main">
         <h1>This is the Main Page</h1>
       </div>
     </>
