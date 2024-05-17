@@ -5,7 +5,7 @@ export function Journal() {
   return (
     <>
       <Root />
-      <main id="info">
+      <main id="journal">
         <h1>This is the Journal Page</h1>
       </main>
     </>
