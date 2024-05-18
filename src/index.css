@@ -1,3 +1,8 @@
 :root {
   background-color: #1a0841;
 }
+
+.container img {
+  max-width: 100%;
+  height: auto;
+}
