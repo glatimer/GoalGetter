@@ -1,0 +1,18 @@
+{
+  "name": "frontend_project_runmate",
+  "version": "1.0.0",
+  "description": "## Setup for developers",
+  "main": "main.js",
+  "scripts": {
+    "start": "react-scripts start",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "react-scripts": "^5.0.1"
+  }
+}
