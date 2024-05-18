@@ -5,7 +5,6 @@ import { IoHome } from "react-icons/io5";
 export function Root() {
   return (
     <div>
-      <Header />
       <nav>
         <ul>
           <li>
@@ -13,8 +12,13 @@ export function Root() {
               <IoHome />
             </a>
           </li>
-          <h1>RunMate</h1>
-          <h2>Every Step Counts</h2>
+          <div style={{ padding: `2em` }}>
+            <h1 style={{ marginBottom: `0%` }}>RunMate</h1>
+            <h2 style={{ marginTop: `0%`, fontSize: `18px` }}>
+              Every Step Counts
+            </h2>
+          </div>
+
           <li>
             <a href="/journal">
               <FaPenToSquare />
@@ -22,6 +26,7 @@ export function Root() {
           </li>
         </ul>
       </nav>
+      <Header />
     </div>
   );
 }
