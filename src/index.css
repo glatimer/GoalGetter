@@ -169,7 +169,33 @@ body {
 >>>>>>> e169642 (Playing around with React icons for the nav bar. Needs styling.)
 }
 
-.container img {
-  max-width: 100%;
+.container {
+  display: block;
+  width: 100%;
   height: auto;
+  padding: 0%;
+  margin: 0%;
+}
+
+.container img {
+  width: 100%;
+  height: auto;
+  padding: 0%;
+  margin: 0%;
+}
+
+nav {
+  display: flex;
+  white-space: nowrap;
+  padding: 10px;
+  width: 100%;
+  background-color: #1a0841;
+  color: #e4e932;
+}
+
+/* Particular spacing in mobile mode */
+@media (max-width: 420px) {
+  nav {
+    justify-content: space-between;
+  }
 }
