@@ -168,3 +168,8 @@ body {
   background-color: #1a0841;
 >>>>>>> e169642 (Playing around with React icons for the nav bar. Needs styling.)
 }
+
+.container img {
+  max-width: 100%;
+  height: auto;
+}

@@ -7,12 +7,11 @@ import Map from "./Map";
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-      </header>
+      <header className="App-header"></header>
       <QuoteDisplay />
       <Weather />
 
-      <Map/>
+      <Map />
     </div>
   );
 }
