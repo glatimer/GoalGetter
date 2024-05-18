@@ -2,20 +2,24 @@
   background-color: #1a0841;
 }
 
-.container {
+/* ------------------------------------- header.jsx ------------------------------------- */
+div .img_container {
   display: block;
+  width: 100%;
+  max-width: fit-content;
+  height: auto;
+  padding: 0%;
+  margin: 0%;
+}
+
+div .img_container img {
   width: 100%;
   height: auto;
   padding: 0%;
   margin: 0%;
 }
 
-.container img {
-  width: 100%;
-  height: auto;
-  padding: 0%;
-  margin: 0%;
-}
+/* ------------------------------------- root.jsx ------------------------------------- */
 
 nav {
   display: flex;
@@ -25,10 +29,32 @@ nav {
   background-color: #1a0841;
   color: #e4e932;
 }
+.nav_list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+}
+
+.nav_item {
+  margin-left: 20px;
+}
 
 /* Particular spacing in mobile mode */
 @media (max-width: 420px) {
   nav {
     justify-content: space-between;
   }
+}
+
+a #home_button {
+  display: block;
+  width: 10%;
+  height: auto;
+  margin: auto;
+}
+
+img #journal {
+  display: flex;
+  align-items: flex-end;
 }
