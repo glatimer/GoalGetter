@@ -1,5 +1,6 @@
 // QuoteDisplay.jsx
 import React, { useState, useEffect } from 'react';
+import './index.css';
 
 function QuoteDisplay() {
   const [quote, setQuote] = useState('');
@@ -20,8 +21,8 @@ function QuoteDisplay() {
   };
 
   return (
-    <div>
-      <h3>Random Quote Generation</h3>
+    <div className="quote">
+      <h3><b>Quote of the day!!</b></h3>
       <p>{quote}</p>
     </div>
   );
