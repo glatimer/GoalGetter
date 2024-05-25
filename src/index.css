@@ -179,11 +179,21 @@ div .img_container {
   margin: 0%;
 }
 
-div .img_container img {
+/* ------------------------------------- navbar.jsx ------------------------------------- */
+
+.container-fluid {
+  display: flex;
   width: 100%;
-  height: auto;
-  padding: 0%;
-  margin: 0%;
+  height: 100vh;
+  padding: 0;
+  margin: 0;
+}
+
+.journal-button {
+  padding: 5px;
+  margin: 5px;
+  border-radius: 3px;
+  border-color: antiquewhite;
 }
 
 /* ------------------------------------- root.jsx ------------------------------------- */
