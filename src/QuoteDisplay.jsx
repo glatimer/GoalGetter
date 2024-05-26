@@ -1,7 +1,7 @@
 // QuoteDisplay.jsx
 import React, { useState, useEffect } from 'react';
 
-function QuoteDisplay() {
+export default function QuoteDisplay() {
   const [quote, setQuote] = useState('');
 
   useEffect(() => {
@@ -21,10 +21,8 @@ function QuoteDisplay() {
 
   return (
     <div className='quote'>
-      <h3>Quote of the day!!!</h3>
       <p>{quote}</p>
     </div>
   );
 }
 
-export default QuoteDisplay;
