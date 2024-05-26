@@ -61,10 +61,9 @@ img #journal {
   align-items: flex-end;
 }
 
-
 /* quote and weather */
 
-body{
+body {
   background-color: #1a1a3d;
 }
 .weather-container {
@@ -136,6 +135,32 @@ body{
   margin-top: 5px;
 }
 
-.load{
+.load {
   color: #fdfdfd;
+}
+
+/* src/components/Map.css */
+/* src/components/Map.css */
+
+.map-container {
+  display: flex;
+}
+
+.route-details {
+  width: 30%;
+  padding: 20px;
+  background: #f8f8f8;
+}
+
+.route-details h2 {
+  margin-top: 0;
+}
+
+.route-details label {
+  display: block;
+  margin-bottom: 10px;
+}
+
+.route-details .Select {
+  margin-bottom: 20px;
 }
