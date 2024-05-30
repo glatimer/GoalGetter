@@ -52,7 +52,7 @@ export default function App() {
     const lat2 = point2[0];
     const lon2 = point2[1];
 
-    const R = 6371e3; // metres
+    const R = 6371e3; 
     const φ1 = lat1 * Math.PI / 180;
     const φ2 = lat2 * Math.PI / 180;
     const Δφ = (lat2 - lat1) * Math.PI / 180;
@@ -63,8 +63,8 @@ export default function App() {
               Math.sin(Δλ / 2) * Math.sin(Δλ / 2);
     const c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
 
-    const distance = R * c; // in metres
-    return distance / 1609.34; // in miles
+    const distance = R * c; 
+    return distance / 1609.34; 
   };
 
   const totalMiles = calculateDistance(source, destination);
