@@ -163,4 +163,8 @@ body {
 
 .route-details .Select {
   margin-bottom: 20px;
+=======
+:root {
+  background-color: #1a0841;
+>>>>>>> e169642 (Playing around with React icons for the nav bar. Needs styling.)
 }
