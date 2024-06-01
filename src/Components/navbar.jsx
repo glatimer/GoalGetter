@@ -3,7 +3,6 @@ import React from "react";
 export default function Navbar() {
   return (
     <>
-      {/* <section> */}
       <nav>
         <ul className="nav-list">
           <li className="nav-item">
@@ -34,7 +33,6 @@ export default function Navbar() {
           </div>
         </ul>
       </nav>
-      {/* </section> */}
     </>
   );
 }
