@@ -1,14 +1,13 @@
-import React, { useState, useEffect } from 'react';
-//import './index.css';
-
+import React, { useState, useEffect } from "react";
+import "../index.css";
 export default function Weather() {
   const [weatherData, setWeatherData] = useState(null);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
-  const [city, setCity] = useState('');
-  const [submittedCity, setSubmittedCity] = useState('');
+  const [city, setCity] = useState("");
+  const [submittedCity, setSubmittedCity] = useState("");
 
-  const API_KEY = '53675578cd9b4541826173002241705'; 
+  const API_KEY = "53675578cd9b4541826173002241705";
   useEffect(() => {
     const fetchWeatherData = async () => {
       if (!submittedCity) return;
@@ -19,7 +18,7 @@ export default function Weather() {
           `http://api.weatherapi.com/v1/forecast.json?key=${API_KEY}&q=${submittedCity}&days=7&aqi=no&alerts=no`
         );
         if (!response.ok) {
-          throw new Error('Failed to fetch weather data');
+          throw new Error("Failed to fetch weather data");
         }
         const data = await response.json();
         setWeatherData(data);
@@ -46,7 +45,6 @@ export default function Weather() {
 
   return (
     <div className="weather-container">
-     
       <form onSubmit={handleSubmit} className="search-form">
         <input
           type="text"
@@ -55,23 +53,31 @@ export default function Weather() {
           placeholder="Enter city name"
           className="city-input"
         />
-        <button type="submit" className="submit-button">Search</button>
+        <button type="submit" className="submit-button">
+          Search
+        </button>
       </form>
 
-      {loading && <div className='load'>Loading...</div>}
-      {error && <div className='load'>Error: {error}</div>}
+      {loading && <div className="load">Loading...</div>}
+      {error && <div className="load">Error: {error}</div>}
       {weatherData && (
         <div className="weather-cards">
           {weatherData.forecast.forecastday.map((day, index) => (
             <div key={index} className="weather-card">
               <div className="day">
-                {new Date(day.date).toLocaleDateString('en-US', { weekday: 'short' })}
+                {new Date(day.date).toLocaleDateString("en-US", {
+                  weekday: "short",
+                })}
               </div>
               <div className="temp">
-                {Math.round(day.day.maxtemp_c)}°C / {Math.round(day.day.mintemp_c)}°C
+                {Math.round(day.day.maxtemp_c)}°C /{" "}
+                {Math.round(day.day.mintemp_c)}°C
               </div>
               <div className="icon">
-                <img src={day.day.condition.icon} alt={day.day.condition.text} />
+                <img
+                  src={day.day.condition.icon}
+                  alt={day.day.condition.text}
+                />
               </div>
               <div className="condition">{day.day.condition.text}</div>
             </div>

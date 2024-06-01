@@ -20,8 +20,10 @@ export default function QuoteDisplay() {
   };
 
   return (
-    <div className='quote'>
-      <p>{quote}</p>
+    <div className="container">
+      <div className="quote">
+        <p>{quote}</p>
+      </div>
     </div>
   );
 }

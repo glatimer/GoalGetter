@@ -1,110 +1,23 @@
-:root {
-  background-color: #1a0841;
-  padding: 0%;
-  margin: 0%;
+* {
+  box-sizing: border-box;
 }
 
-/* body {
-  background-color: #1a1a3d;
-} */
+:root {
+  --bgColor: #1a0841;
+  --textYellow: #e4e932;
+  background-color: var(--bgColor);
+}
+
+body .container-body {
+  background-color: var(--bgColor);
+  padding: 0;
+  margin: 0;
+}
 
 /* ------------------------------------- weather.jsx ------------------------------------- */
 .weather-container {
   text-align: center;
   margin: 20px;
-}
-
-/* ------------------------------------- quotes.jsx ------------------------------------- */
-.quote {
-  text-align: center;
-  margin-bottom: 50px;
-  font-size: 24px;
-  font-style: italic;
-  color: #e4e932;
-}
-
-/* ------------------------------------- map.jsx ------------------------------------- */
-
-.search-form {
-  display: flex;
-  justify-content: center;
-  margin-bottom: 20px;
-}
-
-.city-input {
-  padding: 15px;
-  font-size: 20px;
-  margin-right: 15px;
-  width: 300px; /* Make the input field larger */
-}
-
-/* ------------------------------------- journal.jsx ------------------------------------- */
-/* #journal {
-  background-color: #1a0841;
-} */
-
-/* ------------------------------------- navbar.jsx ------------------------------------- */
-
-.container-fluid {
-  display: flex;
-  width: 100%;
-  height: 100vh;
-  padding: 0;
-  margin: 0;
-}
-
-nav {
-  display: flex;
-  white-space: nowrap;
-  padding: 10px;
-  width: 100%;
-  background-color: #1a0841;
-  color: #e4e932;
-}
-
-.nav-list {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-  display: flex;
-}
-
-.nav-item {
-  margin-left: 20px;
-}
-
-/* Particular spacing in mobile mode */
-@media (max-width: 420px) {
-  nav {
-    justify-content: space-between;
-  }
-}
-
-a #home_button {
-  display: block;
-  width: 10%;
-  height: auto;
-  margin: auto;
-}
-
-img #journal {
-  display: flex;
-  align-items: flex-end;
-}
-
-/* quote and weather */
-
-.weather-container {
-  text-align: center;
-  margin: 20px;
-}
-
-.quote {
-  text-align: center;
-  margin-bottom: 50px;
-  font-size: 24px;
-  font-style: italic;
-  color: #fdfdfd;
 }
 
 .search-form {
@@ -125,7 +38,6 @@ img #journal {
   font-size: 20px;
   cursor: pointer;
 }
-
 .weather-cards {
   display: flex;
   flex-direction: column; /* Display cards vertically */
@@ -167,7 +79,19 @@ img #journal {
   color: #fdfdfd;
 }
 
-/* src/components/Map.css */
+/* ------------------------------------- quotes.jsx ------------------------------------- */
+.quote .container {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  margin-bottom: 50px;
+  font-size: 16px;
+  font-style: italic;
+  color: #e4e932;
+  background-color: #1a0841;
+  width: 70%;
+}
+/* ------------------------------------- map.jsx ------------------------------------- */
 
 .map-container {
   display: flex;
@@ -191,131 +115,82 @@ img #journal {
 .route-details .Select {
   margin-bottom: 20px;
 }
-
-/* ------------------------------------- header.jsx ------------------------------------- */
-div .img_container {
-  display: block;
-  width: 100%;
-  max-width: fit-content;
-  height: auto;
-  padding: 0%;
+/* ------------------------------------- journal.jsx ------------------------------------- */
+#journal {
+  background-color: var(--bgColor);
   margin: 0%;
+  padding: 0%;
 }
 
-/* ------------------------------------- navbar.jsx ------------------------------------- */
+/* .journal {
+} */
 
-.container-fluid {
-  display: flex;
-  width: 100%;
-  height: 100vh;
+/* ------------------------------------- navbar.jsx ------------------------------------- */
+div .container-fluid {
   padding: 0;
   margin: 0;
 }
 
-.journal-button {
-  padding: 5px;
-  margin: 5px;
-  border-radius: 3px;
-  border-color: antiquewhite;
+.container-fluid img {
+  display: flex;
+  width: 100%;
+  padding: 0;
+  margin: 0;
 }
 
-/* ------------------------------------- root.jsx ------------------------------------- */
+body .navbar {
+  padding: 0;
+  margin: 0;
+  width: 100%;
+}
 
 nav {
   display: flex;
   white-space: nowrap;
   padding: 10px;
   width: 100%;
-  background-color: #1a0841;
-  color: #e4e932;
+  background-color: var(--bgColor);
+  color: var(--textYellow);
 }
-.nav_list {
+
+.nav-list {
   list-style: none;
   padding: 0;
   margin: 0;
   display: flex;
 }
 
-.nav_item {
-  margin-left: 20px;
+.nav-item {
+  justify-content: center;
+  margin: 0.75rem 1rem 0.75rem 1rem; /* top, right, bottom, left */
+  width: auto;
 }
 
-/* Particular spacing in mobile mode */
-@media (max-width: 420px) {
-  nav {
-    :root {
-      background-color: #1a0841;
-      padding: 0%;
-      margin: 0%;
-    }
-
-    /* ------------------------------------- navbar.jsx ------------------------------------- */
-
-    .container-fluid {
-      display: flex;
-      width: 100%;
-      height: 100vh;
-      padding: 0;
-      margin: 0;
-    }
-
-    .journal-button {
-      padding: 5px;
-      margin: 5px;
-      border-radius: 3px;
-      border-color: antiquewhite;
-    }
-
-    /* ------------------------------------- root.jsx ------------------------------------- */
-
-    nav {
-      display: flex;
-      white-space: nowrap;
-      padding: 10px;
-      width: 100%;
-      background-color: #1a0841;
-      color: #e4e932;
-    }
-    .nav_list {
-      list-style: none;
-      padding: 0;
-      margin: 0;
-      display: flex;
-    }
-
-    .nav_item {
-      margin-left: 20px;
-    }
-
-    /* Particular spacing in mobile mode */
-    @media (max-width: 420px) {
-      nav {
-        justify-content: space-between;
-      }
-    }
-
-    a #home_button {
-      display: block;
-      width: 10%;
-      height: auto;
-      margin: auto;
-    }
-
-    img #journal {
-      display: flex;
-      align-items: flex-end;
-    }
-    justify-content: space-between;
-  }
+.nav img {
+  display: flexbox;
+  justify-content: center;
+  width: 50%;
 }
-src/index.css a #home_button {
+
+#home_button img {
   display: block;
-  width: 10%;
-  height: auto;
-  margin: auto;
+  width: 50px;
+  height: 50px;
 }
 
-img #journal {
+.title h1 {
+  padding: 0%;
+  margin: 0%;
+}
+
+.title h2 {
+  font-size: 16px;
+}
+
+.journal-button li {
   display: flex;
-  align-items: flex-end;
+  /* align-items: flex-end; */
+  justify-content: right;
+  padding: 0%;
+  margin: 0%;
 }
