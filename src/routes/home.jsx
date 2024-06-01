@@ -1,12 +1,13 @@
 import React from "react";
-import { Root } from "./root";
+import Navbar from "../Components/navbar";
+import QuoteDisplay from "../Components/quotes";
 
-export function Main() {
+export function Home() {
   return (
     <>
-      <Root />
-      <div id="main">
-        <h1>This is the Main Page</h1>
+      <div id="home">
+        <Navbar />
+        <QuoteDisplay />
       </div>
     </>
   );

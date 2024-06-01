@@ -12,8 +12,7 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import { Root } from "./routes/root";
-import { Main } from "./routes/home";
+import { Home } from "./routes/home";
 import { Journal } from "./routes/journal";
 import "./index.css";
 import "bootstrap/dist/css/bootstrap.css";
@@ -21,10 +20,14 @@ import "bootstrap/dist/css/bootstrap.css";
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <Main />,
+    element: <Home />,
   },
   {
-    path: "/journal",
+    path: "home/",
+    element: <Home />,
+  },
+  {
+    path: "journal/",
     element: <Journal />,
   },
 ]);
