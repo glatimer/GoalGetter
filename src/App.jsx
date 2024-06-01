@@ -1,4 +1,3 @@
-// // App.jsx
 // import React from "react";
 // import QuoteDisplay from "./QuoteDisplay";
 // import Weather from "./Weather";
