@@ -4,13 +4,14 @@
 
 :root {
   --bgColor: #1a0841;
+  --textYellow: #e4e932;
   background-color: var(--bgColor);
-  padding: 0%;
-  margin: 0%;
 }
 
 body .container-body {
   background-color: var(--bgColor);
+  padding: 0;
+  margin: 0;
 }
 
 /* ------------------------------------- weather.jsx ------------------------------------- */
@@ -84,7 +85,7 @@ body .container-body {
   justify-content: center;
   text-align: center;
   margin-bottom: 50px;
-  font-size: 24px;
+  font-size: 16px;
   font-style: italic;
   color: #e4e932;
   background-color: #1a0841;
@@ -115,18 +116,32 @@ body .container-body {
   margin-bottom: 20px;
 }
 /* ------------------------------------- journal.jsx ------------------------------------- */
-/* #journal {
-  background-color: #1a0841;
+#journal {
+  background-color: var(--bgColor);
+  margin: 0%;
+  padding: 0%;
+}
+
+/* .journal {
 } */
 
 /* ------------------------------------- navbar.jsx ------------------------------------- */
-
-.container-fluid {
-  display: flex;
-  width: 100%;
-  height: 100vh;
+div .container-fluid {
   padding: 0;
   margin: 0;
+}
+
+.container-fluid img {
+  display: flex;
+  width: 100%;
+  padding: 0;
+  margin: 0;
+}
+
+body .navbar {
+  padding: 0;
+  margin: 0;
+  width: 100%;
 }
 
 nav {
@@ -134,8 +149,8 @@ nav {
   white-space: nowrap;
   padding: 10px;
   width: 100%;
-  background-color: #1a0841;
-  color: #e4e932;
+  background-color: var(--bgColor);
+  color: var(--textYellow);
 }
 
 .nav-list {
@@ -146,24 +161,36 @@ nav {
 }
 
 .nav-item {
-  margin-left: 20px;
+  justify-content: center;
+  margin: 0.75rem 1rem 0.75rem 1rem; /* top, right, bottom, left */
+  width: auto;
 }
 
-/* Particular spacing in mobile mode */
-@media (max-width: 420px) {
-  nav {
-    justify-content: space-between;
-  }
+.nav img {
+  display: flexbox;
+  justify-content: center;
+  width: 50%;
 }
 
-src/index.css a #home_button {
+#home_button img {
   display: block;
-  width: 10%;
-  height: auto;
-  margin: auto;
+  width: 50px;
+  height: 50px;
 }
 
-img #journal {
+.title h1 {
+  padding: 0%;
+  margin: 0%;
+}
+
+.title h2 {
+  font-size: 16px;
+}
+
+.journal-button li {
   display: flex;
-  align-items: flex-end;
+  /* align-items: flex-end; */
+  justify-content: right;
+  padding: 0%;
+  margin: 0%;
 }
