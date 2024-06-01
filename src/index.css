@@ -79,15 +79,17 @@ body .container-body {
 }
 
 /* ------------------------------------- quotes.jsx ------------------------------------- */
-.quote {
+.quote .container {
+  display: flex;
+  justify-content: center;
   text-align: center;
   margin-bottom: 50px;
   font-size: 24px;
   font-style: italic;
   color: #e4e932;
   background-color: #1a0841;
+  width: 70%;
 }
-
 /* ------------------------------------- map.jsx ------------------------------------- */
 
 .map-container {

@@ -11,7 +11,7 @@ export function Home() {
           <div className="navbar">
             <Navbar />
           </div>
-          <div className="quotes">
+          <div className="quote">
             <QuoteDisplay />
           </div>
           <div className="weather">
