@@ -85,7 +85,7 @@ body .container-body {
   justify-content: center;
   text-align: center;
   margin-bottom: 50px;
-  font-size: 16px;
+  font-size: 18px;
   font-style: italic;
   color: #e4e932;
   background-color: #1a0841;
@@ -121,9 +121,6 @@ body .container-body {
   margin: 0%;
   padding: 0%;
 }
-
-/* .journal {
-} */
 
 /* ------------------------------------- navbar.jsx ------------------------------------- */
 div .container-fluid {
@@ -199,7 +196,9 @@ nav {
   color: #f0f0f0;
   font-size: 1.25em;
   margin: 0 1em 1em 0;
+  border: 0.009rem solid var(--textYellow);
+  border-radius: 3px;
 }
 
-/* I want to add styling to the navbar for mobile version */
+/* I want to add styling to the navbar for mobile version -> hamburger */
 /* @media () */
