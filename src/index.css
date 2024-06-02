@@ -40,7 +40,7 @@ body .container-body {
 }
 .weather-cards {
   display: flex;
-  flex-direction: column; /* Display cards vertically */
+  flex-direction: row; /* Display cards vertically */
   align-items: center; /* Center the cards horizontally */
 }
 
