@@ -6,7 +6,7 @@ import Weather from "../Components/weather";
 export function Home() {
   return (
     <>
-      <body className="container-body">
+      <section className="container-body">
         <main className="home">
           <div className="navbar">
             <Navbar />
@@ -18,7 +18,7 @@ export function Home() {
             <Weather />
           </div>
         </main>
-      </body>
+      </section>
     </>
   );
 }

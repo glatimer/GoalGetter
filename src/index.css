@@ -85,7 +85,7 @@ body .container-body {
   justify-content: center;
   text-align: center;
   margin-bottom: 50px;
-  font-size: 16px;
+  font-size: 18px;
   font-style: italic;
   color: #e4e932;
   background-color: #1a0841;
@@ -122,9 +122,6 @@ body .container-body {
   padding: 0%;
 }
 
-/* .journal {
-} */
-
 /* ------------------------------------- navbar.jsx ------------------------------------- */
 div .container-fluid {
   padding: 0;
@@ -140,7 +137,7 @@ div .container-fluid {
 
 body .navbar {
   padding: 0;
-  margin: 0;
+  margin-bottom: 1rem;
   width: 100%;
 }
 
@@ -156,16 +153,15 @@ nav {
 .nav-list {
   list-style: none;
   padding: 0;
-  margin: 0;
+  margin-left: 1em;
   display: flex;
 }
 
 .nav-item {
   justify-content: center;
-  margin: 0.75rem 1rem 0.75rem 1rem; /* top, right, bottom, left */
+  margin: 1rem 1rem 0.75rem 1rem;
   width: auto;
 }
-
 .nav img {
   display: flexbox;
   justify-content: center;
@@ -174,23 +170,35 @@ nav {
 
 #home_button img {
   display: block;
-  width: 50px;
-  height: 50px;
+  width: 4rem;
+  height: 4rem;
 }
 
+/* I want to add a tooltip or a hover with text */
 .title h1 {
   padding: 0%;
-  margin: 0%;
+  margin-top: 0.5rem;
 }
 
 .title h2 {
   font-size: 16px;
 }
 
-.journal-button li {
+.journal-button {
   display: flex;
-  /* align-items: flex-end; */
-  justify-content: right;
+  justify-content: flex-end;
+  align-items: center;
   padding: 0%;
-  margin: 0%;
+  margin-left: auto;
 }
+
+.journal-button a {
+  color: #f0f0f0;
+  font-size: 1.25em;
+  margin: 0 1em 1em 0;
+  border: 0.009rem solid var(--textYellow);
+  border-radius: 3px;
+}
+
+/* I want to add styling to the navbar for mobile version -> hamburger */
+/* @media () */
