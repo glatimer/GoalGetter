@@ -1,6 +1,8 @@
 // weather.jsx is parent to air-quality and uv-index componenets to ensure one fetch for many components
 import React, { useState, useEffect } from "react";
+import AirQuality from "./airQuality";
 import "../index.css";
+
 export default function Weather() {
   const [weatherData, setWeatherData] = useState(null);
   const [loading, setLoading] = useState(false);
@@ -16,7 +18,7 @@ export default function Weather() {
       try {
         setLoading(true);
         const response = await fetch(
-          `http://api.weatherapi.com/v1/forecast.json?key=${API_KEY}&q=${submittedCity}&days=7&aqi=no&alerts=no`
+          `http://api.weatherapi.com/v1/forecast.json?key=${API_KEY}&q=${submittedCity}&days=7&aqi=yes&alerts=no`
         );
         if (!response.ok) {
           throw new Error("Failed to fetch weather data");
@@ -81,11 +83,13 @@ export default function Weather() {
                 />
               </div>
               <div className="condition">{day.day.condition.text}</div>
+              <div className="aqi">
+                <AirQuality aqiData={day.day.air_quality} />
+              </div>
             </div>
           ))}
         </div>
       )}
     </div>
-    // I think we will call the child components here
   );
 }
