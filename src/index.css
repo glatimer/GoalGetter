@@ -85,117 +85,13 @@ body .container-body {
   justify-content: center;
   text-align: center;
   margin-bottom: 50px;
-  font-size: 16px;
+  font-size: 18px;
   font-style: italic;
   color: #e4e932;
   background-color: #1a0841;
   width: 70%;
 }
 /* ------------------------------------- map.jsx ------------------------------------- */
-
-.map-container {
-  display: flex;
-}
-
-.route-details {
-  width: 30%;
-  padding: 20px;
-  background: #f8f8f8;
-}
-
-.route-details h2 {
-  margin-top: 0;
-}
-
-.route-details label {
-  display: block;
-  margin-bottom: 10px;
-}
-
-.route-details .Select {
-  margin-bottom: 20px;
-}
-/* ------------------------------------- journal.jsx ------------------------------------- */
-#journal {
-  background-color: var(--bgColor);
-  margin: 0%;
-  padding: 0%;
-}
-
-/* .journal {
-} */
-
-/* ------------------------------------- navbar.jsx ------------------------------------- */
-div .container-fluid {
-  padding: 0;
-  margin: 0;
-}
-
-.container-fluid img {
-  display: flex;
-  width: 100%;
-  padding: 0;
-  margin: 0;
-}
-
-body .navbar {
-  padding: 0;
-  margin: 0;
-  width: 100%;
-}
-
-nav {
-  display: flex;
-  white-space: nowrap;
-  padding: 10px;
-  width: 100%;
-  background-color: var(--bgColor);
-  color: var(--textYellow);
-}
-
-.nav-list {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-  display: flex;
-}
-
-.nav-item {
-  justify-content: center;
-  margin: 0.75rem 1rem 0.75rem 1rem; /* top, right, bottom, left */
-  width: auto;
-}
-
-.nav img {
-  display: flexbox;
-  justify-content: center;
-  width: 50%;
-}
-
-#home_button img {
-  display: block;
-  width: 50px;
-  height: 50px;
-}
-
-.title h1 {
-  padding: 0%;
-  margin: 0%;
-}
-
-.title h2 {
-  font-size: 16px;
-}
-
-.journal-button li {
-  display: flex;
-  /* align-items: flex-end; */
-  justify-content: right;
-  padding: 0%;
-  margin: 0%;
-}
-
-
 /* map and the search bar beside it is updated, don't know why search bar is coming below the map */
 
 .container {
@@ -248,3 +144,115 @@ nav {
 .radio-buttons input[type="radio"] {
   margin-right: -250px;
 }
+
+
+.map-container {
+  display: flex;
+}
+
+.route-details {
+  width: 30%;
+  padding: 20px;
+  background: #f8f8f8;
+}
+
+.route-details h2 {
+  margin-top: 0;
+}
+
+.route-details label {
+  display: block;
+  margin-bottom: 10px;
+}
+
+.route-details .Select {
+  margin-bottom: 20px;
+}
+/* ------------------------------------- journal.jsx ------------------------------------- */
+#journal {
+  background-color: var(--bgColor);
+  margin: 0%;
+  padding: 0%;
+}
+
+/* ------------------------------------- navbar.jsx ------------------------------------- */
+div .container-fluid {
+  padding: 0;
+  margin: 0;
+}
+
+.container-fluid img {
+  display: flex;
+  width: 100%;
+  padding: 0;
+  margin: 0;
+}
+
+body .navbar {
+  padding: 0;
+  margin-bottom: 1rem;
+  width: 100%;
+}
+
+nav {
+  display: flex;
+  white-space: nowrap;
+  padding: 10px;
+  width: 100%;
+  background-color: var(--bgColor);
+  color: var(--textYellow);
+}
+
+.nav-list {
+  list-style: none;
+  padding: 0;
+  margin-left: 1em;
+  display: flex;
+}
+
+.nav-item {
+  justify-content: center;
+  margin: 1rem 1rem 0.75rem 1rem;
+  width: auto;
+}
+.nav img {
+  display: flexbox;
+  justify-content: center;
+  width: 50%;
+}
+
+#home_button img {
+  display: block;
+  width: 4rem;
+  height: 4rem;
+}
+
+/* I want to add a tooltip or a hover with text */
+.title h1 {
+  padding: 0%;
+  margin-top: 0.5rem;
+}
+
+.title h2 {
+  font-size: 16px;
+}
+
+.journal-button {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  padding: 0%;
+  margin-left: auto;
+}
+
+
+.journal-button a {
+  color: #f0f0f0;
+  font-size: 1.25em;
+  margin: 0 1em 1em 0;
+  border: 0.009rem solid var(--textYellow);
+  border-radius: 3px;
+}
+
+/* I want to add styling to the navbar for mobile version -> hamburger */
+/* @media () */

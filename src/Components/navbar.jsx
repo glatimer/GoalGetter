@@ -1,4 +1,5 @@
 import React from "react";
+import { FaPencilAlt } from "react-icons/fa";
 
 export default function Navbar() {
   return (
@@ -20,14 +21,13 @@ export default function Navbar() {
             <h1>RunMate</h1>
             <h2>Every Step Counts</h2>
           </div>
-          <div className="journal-button">
-            <li className="nav-item">
-              <a className="nav-link active " href="/journal">
-                Journal <br /> Entry
-              </a>
-            </li>
-          </div>
         </ul>
+        <div className="journal-button">
+          <a className="nav-link" href="/journal">
+            <FaPencilAlt style={{ color: `white`, margin: `0 10px 0 0` }} />
+            Journal
+          </a>
+        </div>
       </nav>
     </>
   );
