@@ -36,7 +36,7 @@ const redIcon = new L.Icon({
   shadowSize: [41, 41],
 });
 
-export default function App() {
+export default function MapDisplay() {
   const [route, setRoute] = useState(null);
   const [source, setSource] = useState(null);
   const [destination, setDestination] = useState(null);
@@ -138,14 +138,14 @@ export default function App() {
     const lon2 = point2[1];
 
     const R = 6371e3; // metres
-    const φ1 = (lat1 * Math.PI) / 180;
-    const φ2 = (lat2 * Math.PI) / 180;
+    const pie1 = (lat1 * Math.PI) / 180;
+    const pie2 = (lat2 * Math.PI) / 180;
     const Δφ = ((lat2 - lat1) * Math.PI) / 180;
     const Δλ = ((lon1 - lon2) * Math.PI) / 180;
 
     const a =
       Math.sin(Δφ / 2) * Math.sin(Δφ / 2) +
-      Math.cos(φ1) * Math.cos(φ2) * Math.sin(Δλ / 2) * Math.sin(Δλ / 2);
+      Math.cos(pie1) * Math.cos(pie2) * Math.sin(Δλ / 2) * Math.sin(Δλ / 2);
     const c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
 
     const distance = R * c; // in metres
