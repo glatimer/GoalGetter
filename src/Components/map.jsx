@@ -11,7 +11,7 @@ import {
 import L from "leaflet";
 import "leaflet/dist/leaflet.css";
 import axios from "axios";
-//import "../index.css";
+import "../index.css";
 
 // Custom icons
 const greenIcon = new L.Icon({
@@ -36,7 +36,7 @@ const redIcon = new L.Icon({
   shadowSize: [41, 41],
 });
 
- function MapDisplay() {
+export default function MapDisplay() {
   const [route, setRoute] = useState(null);
   const [source, setSource] = useState(null);
   const [destination, setDestination] = useState(null);
@@ -383,5 +383,3 @@ const redIcon = new L.Icon({
     </div>
   );
 }
-
-export default MapDisplay;

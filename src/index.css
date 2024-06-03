@@ -169,10 +169,6 @@ body .container-body {
   margin-bottom: 20px;
 }
 
-.container {
-  display: flex;
-}
-
 .map {
   flex: 3; 
   height: 100vh; 
