@@ -1,21 +1,21 @@
 // QuoteDisplay.jsx
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect } from 'react';
 
 export default function QuoteDisplay() {
-  const [quote, setQuote] = useState("");
+  const [quote, setQuote] = useState('');
 
   useEffect(() => {
     fetchQuote();
   }, []);
 
   const fetchQuote = () => {
-    fetch("https://api.quotable.io/random")
-      .then((response) => response.json())
-      .then((data) => {
+    fetch('https://api.quotable.io/random')
+      .then(response => response.json())
+      .then(data => {
         setQuote(data.content);
       })
-      .catch((error) => {
-        console.error("Error fetching quote:", error);
+      .catch(error => {
+        console.error('Error fetching quote:', error);
       });
   };
 
@@ -27,3 +27,4 @@ export default function QuoteDisplay() {
     </div>
   );
 }
+
