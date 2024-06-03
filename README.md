@@ -1,4 +1,4 @@
-# RunMate
+# GoalGetter
 
 This application has everything you need to organize your exercise schedule so you can get back to doing the important work of daily movement!
 

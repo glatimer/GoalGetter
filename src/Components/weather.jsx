@@ -1,3 +1,4 @@
+// weather.jsx is parent to air-quality and uv-index componenets to ensure one fetch for many components
 import React, { useState, useEffect } from "react";
 import "../index.css";
 export default function Weather() {
@@ -85,5 +86,6 @@ export default function Weather() {
         </div>
       )}
     </div>
+    // I think we will call the child components here
   );
 }

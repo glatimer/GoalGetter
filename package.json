@@ -1,5 +1,5 @@
 {
-  "name": "runmate",
+  "name": "goalgetter",
   "private": true,
   "version": "0.0.0",
   "type": "module",
@@ -18,6 +18,7 @@
     "react": "^18.2.0",
     "react-bootstrap": "^2.10.2",
     "react-dom": "^18.2.0",
+    "react-gauge-component": "^1.2.21",
     "react-icons": "^5.2.1",
     "react-leaflet": "^4.2.1",
     "react-router-dom": "^6.23.1"

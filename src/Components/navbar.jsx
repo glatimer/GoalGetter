@@ -18,8 +18,8 @@ export default function Navbar() {
             </a>
           </li>
           <div className="title">
-            <h1>RunMate</h1>
-            <h2>Every Step Counts</h2>
+            <h1>GoalGetter</h1>
+            <h2>Making Every Step Count</h2>
           </div>
         </ul>
         <div className="journal-button">
