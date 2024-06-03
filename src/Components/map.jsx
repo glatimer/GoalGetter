@@ -13,7 +13,6 @@ import "leaflet/dist/leaflet.css";
 import axios from "axios";
 import "../index.css";
 
-// Custom icons
 const greenIcon = new L.Icon({
   iconUrl:
     "https://raw.githubusercontent.com/pointhi/leaflet-color-markers/master/img/marker-icon-green.png",
