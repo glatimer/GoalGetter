@@ -333,15 +333,7 @@ export default function MapDisplay() {
             <div>
               <strong className="heading-clrs">Travel Mode:</strong>
               <div className="radio-buttons">
-                <label>
-                  <input
-                    type="radio"
-                    value="bike"
-                    checked={travelMode === "bike"}
-                    onChange={handleTravelModeChange}
-                  />
-                  Bike
-                </label>
+               
                 <label>
                   <input
                     type="radio"
