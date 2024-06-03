@@ -7,7 +7,7 @@ import Maps from "../Components/map";
 export function Home() {
   return (
     <>
-      <body className="container-body">
+      <section className="container-body">
         <main className="home">
           <div className="navbar">
             <Navbar />
@@ -22,7 +22,7 @@ export function Home() {
             <Maps />
           </div>
         </main>
-      </body>
+      </section>
     </>
   );
 }
