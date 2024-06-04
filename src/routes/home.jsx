@@ -4,6 +4,7 @@ import QuoteDisplay from "../Components/quotes";
 import Weather from "../Components/weather";
 import Maps from "../Components/map";
 
+
 export function Home() {
   return (
     <>
