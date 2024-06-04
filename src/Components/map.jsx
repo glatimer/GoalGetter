@@ -139,12 +139,15 @@ export default function MapDisplay() {
     const R = 6371e3; // metres
     const pie1 = (lat1 * Math.PI) / 180;
     const pie2 = (lat2 * Math.PI) / 180;
-    const delta1 = ((lat2 - lat1) * Math.PI) / 180;
-    const delta2 = ((lon1 - lon2) * Math.PI) / 180;
+    const deltaLat = ((lat2 - lat1) * Math.PI) / 180;
+    const deltaLon = ((lon1 - lon2) * Math.PI) / 180;
 
     const a =
-      Math.sin(delta1 / 2) * Math.sin(delta1 / 2) +
-      Math.cos(pie1) * Math.cos(pie2) * Math.sin(delta2 / 2) * Math.sin(delta2 / 2);
+      Math.sin(deltaLat / 2) * Math.sin(deltaLat / 2) +
+      Math.cos(pie1) *
+        Math.cos(pie2) *
+        Math.sin(deltaLon / 2) *
+        Math.sin(deltaLon / 2);
     const c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
 
     const distance = R * c; // in metres

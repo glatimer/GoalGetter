@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
-import axios from "axios";
-//import "../index.css";
+import AirQuality from "./airQuality";
+import "../index.css";
 
 export default function Weather() {
   const [weatherData, setWeatherData] = useState(null);
@@ -17,8 +17,8 @@ export default function Weather() {
 
       try {
         setLoading(true);
-        const response = await axios.get(
-          `http://api.weatherapi.com/v1/forecast.json?key=${API_KEY}&q=${submittedCity}&days=7&aqi=no&alerts=no`
+        const response = await fetch(
+          `http://api.weatherapi.com/v1/forecast.json?key=${API_KEY}&q=${submittedCity}&days=7&aqi=yes&alerts=no`
         );
         setWeatherData(response.data);
         setLoading(false);
@@ -81,9 +81,11 @@ export default function Weather() {
               <div className="condition">{day.day.condition.text}</div>
             </div>
           ))}
+          <div className="aqi">
+            <AirQuality aqiData={weatherData.current.air_quality} />
+          </div>
         </div>
       )}
     </div>
-    // I think we will call the child components here
   );
 }
