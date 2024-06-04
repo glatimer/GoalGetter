@@ -1,6 +1,7 @@
-// weather.jsx is parent to air-quality and uv-index componenets to ensure one fetch for many components
 import React, { useState, useEffect } from "react";
-import "../index.css";
+import axios from "axios";
+//import "../index.css";
+
 export default function Weather() {
   const [weatherData, setWeatherData] = useState(null);
   const [loading, setLoading] = useState(false);
@@ -9,20 +10,17 @@ export default function Weather() {
   const [submittedCity, setSubmittedCity] = useState("");
 
   const API_KEY = "53675578cd9b4541826173002241705";
+
   useEffect(() => {
     const fetchWeatherData = async () => {
       if (!submittedCity) return;
 
       try {
         setLoading(true);
-        const response = await fetch(
+        const response = await axios.get(
           `http://api.weatherapi.com/v1/forecast.json?key=${API_KEY}&q=${submittedCity}&days=7&aqi=no&alerts=no`
         );
-        if (!response.ok) {
-          throw new Error("Failed to fetch weather data");
-        }
-        const data = await response.json();
-        setWeatherData(data);
+        setWeatherData(response.data);
         setLoading(false);
       } catch (error) {
         setError(error.message);
