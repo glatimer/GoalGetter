@@ -1,10 +1,14 @@
-// Create a UV Index guage based on government standards
+// Child component of Weather.jsx
+//Create a UV Index guage based on government standards
 // https://www.epa.gov/sunsafety/uv-index-scale-0
 import React from "react";
 import GaugeComponent from "react-gauge-component";
 import { uvColors } from "../utils/uv-colors";
 
 export default function UVIndex({ uvData }) {
+  if (!uvData) {
+    return <div>UV index data not found.</div>;
+  }
   let uvi = uvData;
   let advice = "";
 
