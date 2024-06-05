@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-//import AirQuality from "./airQuality";
+import AirQuality from "./airQuality";
 //import "../index.css";
 
 export default function Weather() {
@@ -21,10 +21,15 @@ export default function Weather() {
         const response = await axios.get(
           `http://api.weatherapi.com/v1/forecast.json?key=${API_KEY}&q=${submittedCity}&days=7&aqi=no&alerts=no`
         );
+        if (response.data.error) {
+          throw new Error(response.data.error.message);
+        }
         setWeatherData(response.data);
-        setLoading(false);
+        setError(null); // Clear any previous error
       } catch (error) {
-        setError(error.message);
+        setError("Nqot found");
+        setWeatherData(null); // Clear previous weather data on error
+      } finally {
         setLoading(false);
       }
     };
@@ -60,7 +65,7 @@ export default function Weather() {
       </form>
 
       {loading && <div className="load">Loading...</div>}
-      {error && <div className="load">Error: {error}</div>}
+      {error && <div className="load"> {error}</div>}
       {weatherData && (
         <div className="weather-cards">
           {weatherData.forecast.forecastday.map((day, index) => (
@@ -83,7 +88,12 @@ export default function Weather() {
               <div className="condition">{day.day.condition.text}</div>
             </div>
           ))}
-        </div>
+           <div className="aqi">
+            <div className="container">
+              <AirQuality aqiData={weatherData.current.air_quality} />
+            </div>
+          </div>
+          </div>
       )}
     </div>
   );

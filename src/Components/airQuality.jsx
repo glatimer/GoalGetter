@@ -1,18 +1,29 @@
-// airQulaity.jsx is a child component of weather.jsx that recieves data from the same fetch
-// I only want to grab the data for TODAY and display it in a gauge
+import React from "react";
 import { calculateAQI } from "../utils/calculate-aqi";
 import { aqiColors } from "../utils/air-polution-colors";
+//import GaugeComponent from "react-gauge-component";
 
 export default function AirQuality({ aqiData }) {
-  let { co, no2, o3, so2, pm2_5, pm10 } = aqiData;
   if (!aqiData) {
     return <div>Air quality data not found.</div>;
   }
 
+  let { co, no2, o3, so2, pm2_5, pm10, "us-epa-index": epa } = aqiData;
+
+  // for testing
+  console.log("PM2.5 = ", pm2_5);
+  console.log("PM10 = ", pm10);
+  console.log("co = ", co);
+  console.log("so2 = ", so2);
+  console.log("no2 = ", no2);
+  console.log("o3 = ", o3);
+  console.log("epa", epa);
+
   // Prep each value for AQI calculation
   pm2_5 = Number.parseFloat(pm2_5).toFixed(1);
   pm10 = Math.round(pm10);
-  co = (co * 24.45) / 28; // needs conversion to ppm
+  co = co * 0.873;
+  // co = (co * 24.45) / 28; // needs conversion to ppm
   co = Number.parseFloat(co).toFixed(1);
   so2 = ((so2 * 24.45) / 64) * 1000; // needs conversion to ppb
   so2 = Math.round(so2);
@@ -28,6 +39,7 @@ export default function AirQuality({ aqiData }) {
   console.log("so2 = ", so2);
   console.log("no2 = ", no2);
   console.log("o3 = ", o3);
+  console.log("epa", epa);
 
   // Calculate and store current AQIs
   const [pm2_5AQI, pm2_5grade] = calculateAQI(pm2_5, "pm2_5");
@@ -51,7 +63,6 @@ export default function AirQuality({ aqiData }) {
   let finalName = "";
   let finalGrade = 0;
   aqiValues.forEach((element) => {
-    console.log(element);
     if (element.aqi >= finalAQI) {
       finalAQI = element.aqi;
       finalName = element.name;
@@ -59,18 +70,53 @@ export default function AirQuality({ aqiData }) {
     }
   });
 
-  // calculate air quality based on highest pollutant
-  const index = 0;
-  if (finalName === "pm2_5") {
-  }
-  console.log(
-    "Name: ",
-    finalName,
-    "largest: ",
-    finalAQI,
-    "Grade: ",
-    finalGrade
-  );
+  // for testing
+  console.log("Final AQI = ", finalAQI);
+  console.log("Final Pollutant = ", finalName);
+  console.log("Final Grade = ", finalGrade);
 
-  // create gauge using D3.js
+  // create gauge using GaugeComponent
+  return (
+    <>
+      <div>
+        <h3 style={{ color: `#e4e932` }}>Air Quality Index</h3>
+        <GaugeComponent
+          value={epa}
+          minValue={0}
+          maxValue={6}
+          type="radial"
+          labels={{
+            tickLabels: {
+              type: "inner",
+              ticks: [
+                { value: 1 },
+                { value: 2 },
+                { value: 3 },
+                { value: 4 },
+                { value: 5 },
+                { value: 6 },
+              ],
+            },
+          }}
+          arc={{
+            colorArray: aqiColors,
+            subArcs: [
+              { limit: 1 },
+              { limit: 2 },
+              { limit: 3 },
+              { limit: 4 },
+              { limit: 5 },
+              { limit: 6 },
+            ],
+            padding: 0.02,
+            width: 0.3,
+          }}
+          pointer={{
+            elastic: true,
+            animationDelay: 0,
+          }}
+        />
+      </div>
+    </>
+  );
 }
