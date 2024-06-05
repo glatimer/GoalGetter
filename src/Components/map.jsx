@@ -13,7 +13,6 @@ import "leaflet/dist/leaflet.css";
 import axios from "axios";
 import "../index.css";
 
-// Custom icons
 const greenIcon = new L.Icon({
   iconUrl:
     "https://raw.githubusercontent.com/pointhi/leaflet-color-markers/master/img/marker-icon-green.png",
@@ -45,7 +44,7 @@ export default function MapDisplay() {
   const [sourceSearchInput, setSourceSearchInput] = useState("");
   const [destinationSearchInput, setDestinationSearchInput] = useState("");
   const [mapCenter, setMapCenter] = useState([51.505, -0.09]); // Default center
-  const [travelMode, setTravelMode] = useState("bike");
+  const [travelMode, setTravelMode] = useState(null);
 
   const travelSpeeds = {
     bike: 12.5, // average speed in mph
@@ -251,8 +250,7 @@ export default function MapDisplay() {
           <MapCenterUpdater />
           <ClickHandler />
           {route && <Polyline positions={route} color="red" />}{" "}
-          {/* Route highlighted in red */}
-          {source && Array.isArray(source) && source[0] && source[1] && (
+          {source && (
             <Marker position={source} icon={greenIcon}>
               <Popup>
                 <div>
@@ -268,51 +266,62 @@ export default function MapDisplay() {
               </Popup>
             </Marker>
           )}
-          {destination &&
-            Array.isArray(destination) &&
-            destination[0] &&
-            destination[1] && (
-              <Marker position={destination} icon={redIcon}>
-                <Popup>
-                  <div>
-                    <strong>Destination:</strong>
-                  </div>
-                  <div>
-                    <strong>Location:</strong>{" "}
-                    {destinationLocation || "Loading..."}
-                  </div>
-                  <div>
-                    <strong>Latitude:</strong> {destination[0].toFixed(4)},{" "}
-                    <strong>Longitude:</strong> {destination[1].toFixed(4)}
-                  </div>
-                </Popup>
-              </Marker>
-            )}
+          {destination && (
+            <Marker position={destination} icon={redIcon}>
+              <Popup>
+                <div>
+                  <strong>Destination:</strong>
+                </div>
+                <div>
+                  <strong>Location:</strong>{" "}
+                  {destinationLocation || "Loading..."}
+                </div>
+                <div>
+                  <strong>Latitude:</strong> {destination[0].toFixed(4)},{" "}
+                  <strong>Longitude:</strong> {destination[1].toFixed(4)}
+                </div>
+              </Popup>
+            </Marker>
+          )}
         </MapContainer>
       </div>
       <div className="sidebar">
         <div>
           <div className="input-container">
-            <input
-              type="text"
-              value={sourceSearchInput}
-              onChange={(e) => setSourceSearchInput(e.target.value)}
-              onKeyPress={handleSourceKeyPress}
-              placeholder="Search Source Location"
-            />
-            <button onClick={handleSourceSearch}>Search Source</button>
+            <div className="icon-input">
+              <img
+                src="https://raw.githubusercontent.com/pointhi/leaflet-color-markers/master/img/marker-icon-green.png"
+                alt="green marker"
+                className="icon"
+              />
+              <p>Source Location:</p>
+              <input
+                type="text"
+                value={sourceSearchInput}
+                onChange={(e) => setSourceSearchInput(e.target.value)}
+                onKeyPress={handleSourceKeyPress}
+                placeholder="Search Source Location"
+              />
+              <button onClick={handleSourceSearch}>Search</button>
+            </div>
           </div>
           <div className="input-container">
-            <input
-              type="text"
-              value={destinationSearchInput}
-              onChange={(e) => setDestinationSearchInput(e.target.value)}
-              onKeyPress={handleDestinationKeyPress}
-              placeholder="Search Destination Location"
-            />
-            <button onClick={handleDestinationSearch}>
-              Search Destination
-            </button>
+            <div className="icon-input">
+              <img
+                src="https://raw.githubusercontent.com/pointhi/leaflet-color-markers/master/img/marker-icon-red.png"
+                alt="red marker"
+                className="icon"
+              />
+              <p>Destination Location:</p>
+              <input
+                type="text"
+                value={destinationSearchInput}
+                onChange={(e) => setDestinationSearchInput(e.target.value)}
+                onKeyPress={handleDestinationKeyPress}
+                placeholder="Search Destination Location"
+              />
+              <button onClick={handleDestinationSearch}>Search</button>
+            </div>
           </div>
           <div>
             <strong>Source:</strong>{" "}
@@ -328,23 +337,20 @@ export default function MapDisplay() {
           </div>
           <div>
             <br></br>
-            <strong className="heading-clrs">Miles:</strong>{" "}
+            <strong className="heading-clrs">
+              From source to destination (in miles):
+            </strong>{" "}
             {totalMiles.toFixed(2)}
+          </div>
+          <div>
+            <strong className="heading-clrs">Round trip (in miles): </strong>{" "}
+            {2 * totalMiles.toFixed(2)}
           </div>
           <br></br>
           <div>
             <div>
               <strong className="heading-clrs">Travel Mode:</strong>
               <div className="radio-buttons">
-                <label>
-                  <input
-                    type="radio"
-                    value="bike"
-                    checked={travelMode === "bike"}
-                    onChange={handleTravelModeChange}
-                  />
-                  Bike
-                </label>
                 <label>
                   <input
                     type="radio"

@@ -15,6 +15,10 @@ body .container-body {
 }
 
 /* ------------------------------------- weather.jsx ------------------------------------- */
+
+.weatherHead {
+  color: white;
+}
 .weather-container {
   text-align: center;
   margin: 20px;
@@ -183,6 +187,53 @@ body .container-body {
 
 .route-details .Select {
   margin-bottom: 20px;
+}
+
+.map {
+  flex: 3;
+  height: 100vh;
+}
+
+.sidebar {
+  flex: 1;
+  padding: 10px;
+  background-color: #f0f0f0;
+  height: 100vh;
+  overflow-y: auto;
+}
+
+.sidebar input {
+  width: calc(100% - 22px);
+  margin-bottom: 10px;
+  padding: 5px;
+}
+
+.sidebar button {
+  display: block;
+  width: 100%;
+  margin-bottom: 10px;
+  padding: 5px;
+}
+
+.heading-clrs {
+  color: rgb(71, 8, 148);
+}
+
+.radio-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.radio-buttons label {
+  padding-right: 5px;
+  display: inline-flex;
+  align-items: center;
+  margin: 0px;
+}
+
+.radio-buttons input[type="radio"] {
+  margin-right: -250px;
 }
 /* ------------------------------------- journal.jsx ------------------------------------- */
 #journal {
