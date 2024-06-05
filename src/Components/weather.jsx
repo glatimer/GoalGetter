@@ -2,6 +2,7 @@
 import React, { useState, useEffect } from "react";
 import AirQuality from "./airQuality";
 import "../index.css";
+import UVIndex from "./uvIndex";
 
 export default function Weather() {
   const [weatherData, setWeatherData] = useState(null);
@@ -85,10 +86,15 @@ export default function Weather() {
               <div className="condition">{day.day.condition.text}</div>
             </div>
           ))}
+        </div>
+      )}
+      {weatherData && (
+        <div className="gauge-container">
           <div className="aqi">
-            <div className="container">
-              <AirQuality aqiData={weatherData.current.air_quality} />
-            </div>
+            <AirQuality aqiData={weatherData.current.air_quality} />
+          </div>
+          <div className="uv-index">
+            <UVIndex uvData={weatherData.current.uv} />
           </div>
         </div>
       )}

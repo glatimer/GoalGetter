@@ -79,11 +79,19 @@ body .container-body {
   color: #fdfdfd;
 }
 
-/* ------------------------------------- airQuality.jsx ------------------------------------- */
-.aqi .container {
+/* ------------------------------------- gauge visuals ------------------------------------- */
+.gauge-container {
   display: flex;
-  width: auto;
+  width: 100%;
   justify-content: center;
+  align-items: center;
+}
+
+.uv-index-text {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
 }
 
 /* ------------------------------------- quotes.jsx ------------------------------------- */
