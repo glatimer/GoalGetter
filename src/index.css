@@ -83,6 +83,13 @@ body .container-body {
   color: #fdfdfd;
 }
 
+/* ------------------------------------- airQuality.jsx ------------------------------------- */
+.aqi .container {
+  display: flex;
+  width: auto;
+  justify-content: center;
+}
+
 /* ------------------------------------- quotes.jsx ------------------------------------- */
 .quote .container {
   display: flex;

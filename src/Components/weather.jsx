@@ -83,6 +83,12 @@ export default function Weather() {
               <div className="condition">{day.day.condition.text}</div>
             </div>
           ))}
+          <div className="aqi">
+            <div className="container">
+              <AirQuality aqiData={weatherData.current.air_quality} />
+            </div>
+          </div>
+
         </div>
       )}
     </div>
