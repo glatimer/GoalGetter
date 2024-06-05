@@ -15,6 +15,10 @@ body .container-body {
 }
 
 /* ------------------------------------- weather.jsx ------------------------------------- */
+
+.weatherHead {
+  color: white;
+}
 .weather-container {
   text-align: center;
   margin: 20px;
@@ -112,7 +116,9 @@ body .container-body {
 }
 
 .sidebar input {
-  width: calc(100% - 22px); /* Make input fields full width minus some padding */
+  width: calc(
+    100% - 22px
+  ); /* Make input fields full width minus some padding */
   margin-bottom: 10px;
   padding: 5px;
 }
@@ -124,7 +130,7 @@ body .container-body {
   padding: 5px;
 }
 
-.heading-clrs{
+.heading-clrs {
   color: rgb(71, 8, 148);
 }
 
@@ -144,7 +150,6 @@ body .container-body {
 .radio-buttons input[type="radio"] {
   margin-right: -250px;
 }
-
 
 .map-container {
   display: flex;
@@ -170,20 +175,20 @@ body .container-body {
 }
 
 .map {
-  flex: 3; 
-  height: 100vh; 
+  flex: 3;
+  height: 100vh;
 }
 
 .sidebar {
-  flex: 1; 
+  flex: 1;
   padding: 10px;
   background-color: #f0f0f0;
-  height: 100vh; 
-  overflow-y: auto; 
+  height: 100vh;
+  overflow-y: auto;
 }
 
 .sidebar input {
-  width: calc(100% - 22px); 
+  width: calc(100% - 22px);
   margin-bottom: 10px;
   padding: 5px;
 }
@@ -195,7 +200,7 @@ body .container-body {
   padding: 5px;
 }
 
-.heading-clrs{
+.heading-clrs {
   color: rgb(71, 8, 148);
 }
 

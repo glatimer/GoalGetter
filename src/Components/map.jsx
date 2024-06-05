@@ -44,7 +44,7 @@ export default function MapDisplay() {
   const [sourceSearchInput, setSourceSearchInput] = useState("");
   const [destinationSearchInput, setDestinationSearchInput] = useState("");
   const [mapCenter, setMapCenter] = useState([51.505, -0.09]); // Default center
-  const [travelMode, setTravelMode] = useState("bike");
+  const [travelMode, setTravelMode] = useState(null);
 
   const travelSpeeds = {
     bike: 12.5, // average speed in mph
@@ -139,12 +139,15 @@ export default function MapDisplay() {
     const R = 6371e3; // metres
     const pie1 = (lat1 * Math.PI) / 180;
     const pie2 = (lat2 * Math.PI) / 180;
-    const delta1 = ((lat2 - lat1) * Math.PI) / 180;
-    const delta2 = ((lon1 - lon2) * Math.PI) / 180;
+    const deltaLat = ((lat2 - lat1) * Math.PI) / 180;
+    const deltaLon = ((lon1 - lon2) * Math.PI) / 180;
 
     const a =
-      Math.sin(delta1 / 2) * Math.sin(delta1 / 2) +
-      Math.cos(pie1) * Math.cos(pie2) * Math.sin(delta2 / 2) * Math.sin(delta2 / 2);
+      Math.sin(deltaLat / 2) * Math.sin(deltaLat / 2) +
+      Math.cos(pie1) *
+        Math.cos(pie2) *
+        Math.sin(deltaLon / 2) *
+        Math.sin(deltaLon / 2);
     const c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
 
     const distance = R * c; // in metres
@@ -334,8 +337,14 @@ export default function MapDisplay() {
           </div>
           <div>
             <br></br>
-            <strong className="heading-clrs">Miles:</strong>{" "}
+            <strong className="heading-clrs">
+              From source to destination (in miles):
+            </strong>{" "}
             {totalMiles.toFixed(2)}
+          </div>
+          <div>
+            <strong className="heading-clrs">Round trip (in miles): </strong>{" "}
+            {2 * totalMiles.toFixed(2)}
           </div>
           <br></br>
           <div>

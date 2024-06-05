@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
+//import AirQuality from "./airQuality";
 //import "../index.css";
 
 export default function Weather() {
@@ -44,6 +45,7 @@ export default function Weather() {
 
   return (
     <div className="weather-container">
+      <h3 className="weatherHead">Weather Information</h3>
       <form onSubmit={handleSubmit} className="search-form">
         <input
           type="text"
@@ -84,6 +86,5 @@ export default function Weather() {
         </div>
       )}
     </div>
-    // I think we will call the child components here
   );
 }
