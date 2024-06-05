@@ -43,9 +43,7 @@ export default function Weather() {
     setWeatherData(null);
   };
 
-  
   return (
-    
     <div className="weather-container">
       <h3 className="weatherHead">Weather Information</h3>
       <form onSubmit={handleSubmit} className="search-form">
@@ -85,11 +83,8 @@ export default function Weather() {
               <div className="condition">{day.day.condition.text}</div>
             </div>
           ))}
-         
+        </div>
+      )}
     </div>
-
-        )}
-    </div>
-     
   );
 }

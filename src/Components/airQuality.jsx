@@ -1,4 +1,3 @@
-
 // airQulaity.jsx is a child component of weather.jsx that recieves data from the same fetch
 // I only want to grab the data for TODAY and display it in a gauge
 import { calculateAQI } from "../utils/calculate-aqi";
@@ -75,4 +74,3 @@ export default function AirQuality({ aqiData }) {
 
   // create gauge using D3.js
 }
-

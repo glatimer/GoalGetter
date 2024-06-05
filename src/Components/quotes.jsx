@@ -1,10 +1,10 @@
 // QuoteDisplay.jsx
-import React, { useState, useEffect } from 'react';
-import axios from 'axios';
+import React, { useState, useEffect } from "react";
+import axios from "axios";
 
 export default function QuoteDisplay() {
-  const [quote, setQuote] = useState('');
-  const [error, setError] = useState('');
+  const [quote, setQuote] = useState("");
+  const [error, setError] = useState("");
 
   useEffect(() => {
     fetchQuote();
@@ -12,10 +12,10 @@ export default function QuoteDisplay() {
 
   const fetchQuote = async () => {
     try {
-      const response = await axios.get('https://api.quotable.io/random');
+      const response = await axios.get("https://api.quotable.io/random");
       setQuote(response.data.content);
     } catch (error) {
-      setError('Error fetching quote: ' + error.message);
+      setError("Error fetching quote: " + error.message);
     }
   };
 
