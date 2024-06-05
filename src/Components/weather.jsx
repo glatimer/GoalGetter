@@ -86,7 +86,9 @@ export default function Weather() {
             </div>
           ))}
           <div className="aqi">
-            <AirQuality aqiData={weatherData.current.air_quality} />
+            <div className="container">
+              <AirQuality aqiData={weatherData.current.air_quality} />
+            </div>
           </div>
         </div>
       )}

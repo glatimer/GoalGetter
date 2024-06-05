@@ -3,6 +3,7 @@ import Navbar from "../Components/navbar";
 import QuoteDisplay from "../Components/quotes";
 import Weather from "../Components/weather";
 import Maps from "../Components/map";
+import AirQuality from "../Components/airQuality";
 
 export function Home() {
   return (
@@ -17,6 +18,9 @@ export function Home() {
           </div>
           <div className="weather">
             <Weather />
+          </div>
+          <div className="aqi">
+            <AirQuality />
           </div>
           <div className="map">
             <Maps />
