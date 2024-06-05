@@ -1,5 +1,6 @@
 // Child component of Weather.jsx
 // Air quality component developed to fit government standards for ratings and colors
+
 import React from "react";
 import { calculateAQI } from "../utils/calculate-aqi";
 import { aqiColors } from "../utils/air-polution-colors";
@@ -11,6 +12,7 @@ export default function AirQuality({ aqiData }) {
   }
 
   let { co, no2, o3, so2, pm2_5, pm10, "us-epa-index": epa } = aqiData;
+
   let response = "";
 
   // Decipher air quality value for response message
@@ -77,7 +79,6 @@ export default function AirQuality({ aqiData }) {
     <>
       <div>
         <h3 style={{ color: `#e4e932` }}>Air Quality Index</h3>
-
         <GaugeComponent
           value={epa}
           minValue={0}
@@ -99,6 +100,7 @@ export default function AirQuality({ aqiData }) {
           arc={{
             colorArray: aqiColors,
             subArcs: [
+              { limit: 1 },
               { limit: 2 },
               { limit: 3 },
               { limit: 4 },
