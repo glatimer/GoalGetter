@@ -44,7 +44,7 @@ export default function MapDisplay() {
   const [sourceSearchInput, setSourceSearchInput] = useState("");
   const [destinationSearchInput, setDestinationSearchInput] = useState("");
   const [mapCenter, setMapCenter] = useState([51.505, -0.09]); // Default center
-  const [travelMode, setTravelMode] = useState("bike");
+  const [travelMode, setTravelMode] = useState(null);
 
   const travelSpeeds = {
     bike: 12.5, // average speed in mph
