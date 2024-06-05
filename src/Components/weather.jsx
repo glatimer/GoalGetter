@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import AirQuality from "./airQuality";
+//import AirQuality from "./airQuality";
 //import "../index.css";
 
 export default function Weather() {
@@ -43,8 +43,11 @@ export default function Weather() {
     setWeatherData(null);
   };
 
+  
   return (
+    
     <div className="weather-container">
+      <h3 className="weatherHead">Weather Information</h3>
       <form onSubmit={handleSubmit} className="search-form">
         <input
           type="text"
@@ -82,9 +85,7 @@ export default function Weather() {
               <div className="condition">{day.day.condition.text}</div>
             </div>
           ))}
-          <div className="aqi">
-            <AirQuality qiData={weatherData.current.air_quality}/>
-        </div>
+         
     </div>
 
         )}

@@ -15,6 +15,10 @@ body .container-body {
 }
 
 /* ------------------------------------- weather.jsx ------------------------------------- */
+
+.weatherHead{
+  color:white;
+}
 .weather-container {
   text-align: center;
   margin: 20px;

@@ -337,8 +337,12 @@ export default function MapDisplay() {
           </div>
           <div>
             <br></br>
-            <strong className="heading-clrs">Miles:</strong>{" "}
+            <strong className="heading-clrs">From source to destination (in miles):</strong>{" "}
             {totalMiles.toFixed(2)}
+          </div>
+          <div>
+            <strong className="heading-clrs">Round trip (in miles): </strong>{" "}
+            {2*totalMiles.toFixed(2)}
           </div>
           <br></br>
           <div>
