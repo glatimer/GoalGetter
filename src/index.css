@@ -91,7 +91,8 @@ body .container-body {
   align-items: center;
 }
 
-.uv-index-text {
+.uv-index-text,
+.aqi-text {
   display: flex;
   width: 100%;
   justify-content: center;
