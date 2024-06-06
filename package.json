@@ -26,8 +26,8 @@
   },
   "devDependencies": {
     "@babel/core": "^7.24.6",
-    "@babel/preset-env": "^7.24.6",
-    "@babel/preset-react": "^7.24.6",
+    "@babel/preset-env": "^7.24.7",
+    "@babel/preset-react": "^7.24.7",
     "@testing-library/jest-dom": "^6.4.5",
     "@testing-library/react": "^15.0.7",
     "@types/react": "^18.2.66",
@@ -47,11 +47,15 @@
   },
   "jest": {
     "transform": {
-      "^.+\\.(js|jsx)$": "babel-jest"
+      "^.+\\.jsx?$": "babel-jest"
     },
-    "testEnvironment": "jsdom",
-    "moduleNameMapper": {
-      "\\.(css|less)$": "<rootDir>/cssMock.js"
-    }
+    "transformIgnorePatterns": [
+      "/node_modules/(?!d3|react-gauge-component)/"
+    ],
+    "moduleFileExtensions": [
+      "js",
+      "jsx"
+    ],
+    "testEnvironment": "jsdom"
   }
 }

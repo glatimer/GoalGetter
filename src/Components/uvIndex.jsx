@@ -9,18 +9,18 @@ export default function UVIndex({ uvData }) {
   if (!uvData) {
     return <div>UV index data not found.</div>;
   }
+
   let uvi = uvData;
   let advice = "";
 
-  // Decipher UV Index with response
   if (uvi >= 1 && uvi <= 2) {
-    advice = "Low: No protection  needed";
+    advice = "Low: No protection needed";
   } else if (uvi > 2 && uvi <= 7) {
     advice = "Moderate: Protection needed";
   } else if (uvi >= 8) {
     advice = "Extra protection needed. Be careful outside.";
   } else {
-    response = "undefined";
+    advice = "undefined";
   }
 
   return (

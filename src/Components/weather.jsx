@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import AirQuality from "./airQuality";
-import "../index.css";
+//import "../index.css";
 import UVIndex from "./uvIndex";
 import axios from "axios";
 
