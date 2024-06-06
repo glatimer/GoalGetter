@@ -20,7 +20,7 @@ export default function Weather() {
       try {
         setLoading(true);
         const response = await axios.get(
-          `http://api.weatherapi.com/v1/forecast.json?key=${API_KEY}&q=${submittedCity}&days=7&aqi=no&alerts=no`
+          `http://api.weatherapi.com/v1/forecast.json?key=${API_KEY}&q=${submittedCity}&days=7&aqi=yes&alerts=no`
         );
         if (response.data.error) {
           throw new Error(response.data.error.message);
@@ -89,8 +89,6 @@ export default function Weather() {
               <div className="condition">{day.day.condition.text}</div>
             </div>
           ))}
-
-
         </div>
       )}
       {weatherData && (
