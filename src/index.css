@@ -243,6 +243,22 @@ body .container-body {
   padding: 0%;
 }
 
+.journal-form .container {
+  width: 50%;
+}
+
+.journal-form {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--bgColor);
+}
+
+.journal-form h1 {
+  background-color: var(--bgColor);
+  color: var(--textYellow);
+}
+
 /* ------------------------------------- navbar.jsx ------------------------------------- */
 div .container-fluid {
   padding: 0;
