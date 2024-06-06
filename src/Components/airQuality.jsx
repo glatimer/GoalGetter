@@ -68,7 +68,7 @@ export default function AirQuality({ aqiData }) {
     }
   });
 
-  // create gauge using GaugeComponent
+  // Create gauge using GaugeComponent
   return (
     <>
       <div>
