@@ -17,7 +17,7 @@ body .container-body {
 /* ------------------------------------- weather.jsx ------------------------------------- */
 
 .weatherHead {
-  color: white;
+  color: rgb(255, 255, 255);
 }
 .weather-container {
   text-align: center;
@@ -96,6 +96,7 @@ body .container-body {
   width: 100%;
   justify-content: center;
   align-items: center;
+}
 
 /* ------------------------------------- quotes.jsx ------------------------------------- */
 .quote .container {

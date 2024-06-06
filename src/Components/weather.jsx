@@ -4,7 +4,6 @@ import "../index.css";
 import UVIndex from "./uvIndex";
 import axios from "axios";
 
-
 export default function Weather() {
   const [weatherData, setWeatherData] = useState(null);
   const [loading, setLoading] = useState(false);
@@ -23,10 +22,15 @@ export default function Weather() {
         const response = await axios.get(
           `http://api.weatherapi.com/v1/forecast.json?key=${API_KEY}&q=${submittedCity}&days=7&aqi=no&alerts=no`
         );
+        if (response.data.error) {
+          throw new Error(response.data.error.message);
+        }
         setWeatherData(response.data);
-        setLoading(false);
+        setError(null); // Clear any previous error
       } catch (error) {
-        setError(error.message);
+        setError("Nqot found");
+        setWeatherData(null); // Clear previous weather data on error
+      } finally {
         setLoading(false);
       }
     };
@@ -62,7 +66,7 @@ export default function Weather() {
       </form>
 
       {loading && <div className="load">Loading...</div>}
-      {error && <div className="load">Error: {error}</div>}
+      {error && <div className="load"> {error}</div>}
       {weatherData && (
         <div className="weather-cards">
           {weatherData.forecast.forecastday.map((day, index) => (
