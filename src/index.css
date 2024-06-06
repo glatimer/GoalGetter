@@ -243,6 +243,33 @@ body .container-body {
   padding: 0%;
 }
 
+.journal-form .container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.journal-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--bgColor);
+}
+
+.journal-form h1 {
+  background-color: var(--bgColor);
+  color: var(--textYellow);
+}
+
+.form-label {
+  display: flexbox;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
 /* ------------------------------------- navbar.jsx ------------------------------------- */
 div .container-fluid {
   padding: 0;
