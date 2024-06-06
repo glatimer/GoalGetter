@@ -53,9 +53,9 @@ export default function JournalForm() {
                   </label>
                   <br />
                   <label
-                    htmlFor="time"
+                    htmlFor="start-time"
                     className="form-label"
-                    id="form-label"
+                    id="start-time"
                     style={{ fontWeight: `bold`, color: `white` }}
                   >
                     Start:
@@ -68,7 +68,7 @@ export default function JournalForm() {
                   </label>
                   <br />
                   <label
-                    htmlFor="time"
+                    htmlFor="finish-time"
                     className="form-label"
                     id="form-label"
                     style={{ fontWeight: `bold`, color: `white` }}
@@ -99,6 +99,31 @@ export default function JournalForm() {
                       }}
                     ></textarea>
                   </div>
+                </div>
+                <div style={{ display: `flex`, justifyContent: `center` }}>
+                  <button
+                    type="submit"
+                    id="trigger-modal"
+                    className="btn-primary"
+                    style={{
+                      width: "40%",
+                      margin: "1em",
+                      borderRadius: "3px",
+                    }}
+                  >
+                    Submit
+                  </button>
+                  <button
+                    id="trigger-reset"
+                    className="btn-secondary"
+                    style={{
+                      width: "40%",
+                      margin: "1em",
+                      borderRadius: "3px",
+                    }}
+                  >
+                    Reset
+                  </button>
                 </div>
               </section>
             </form>
