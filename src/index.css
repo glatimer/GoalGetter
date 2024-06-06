@@ -17,7 +17,7 @@ body .container-body {
 /* ------------------------------------- weather.jsx ------------------------------------- */
 
 .weatherHead {
-  color: white;
+  color: rgb(255, 255, 255);
 }
 .weather-container {
   text-align: center;
@@ -83,11 +83,19 @@ body .container-body {
   color: #fdfdfd;
 }
 
-/* ------------------------------------- airQuality.jsx ------------------------------------- */
-.aqi .container {
+/* ------------------------------------- gauge visuals ------------------------------------- */
+.gauge-container {
   display: flex;
-  width: auto;
+  width: 100%;
   justify-content: center;
+  align-items: center;
+}
+
+.uv-index-text {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
 }
 
 /* ------------------------------------- quotes.jsx ------------------------------------- */

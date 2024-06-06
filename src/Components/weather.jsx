@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from "react";
-import axios from "axios";
 import AirQuality from "./airQuality";
-//import "../index.css";
+import "../index.css";
+import UVIndex from "./uvIndex";
+import axios from "axios";
 
 export default function Weather() {
   const [weatherData, setWeatherData] = useState(null);
@@ -88,12 +89,19 @@ export default function Weather() {
               <div className="condition">{day.day.condition.text}</div>
             </div>
           ))}
-           <div className="aqi">
-            <div className="container">
-              <AirQuality aqiData={weatherData.current.air_quality} />
-            </div>
+
+
+        </div>
+      )}
+      {weatherData && (
+        <div className="gauge-container">
+          <div className="aqi">
+            <AirQuality aqiData={weatherData.current.air_quality} />
           </div>
+          <div className="uv-index">
+            <UVIndex uvData={weatherData.current.uv} />
           </div>
+        </div>
       )}
     </div>
   );
