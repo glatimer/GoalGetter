@@ -244,11 +244,15 @@ body .container-body {
 }
 
 .journal-form .container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   width: 100%;
 }
 
 .journal-form {
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
   background-color: var(--bgColor);

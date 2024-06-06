@@ -1,22 +1,31 @@
 // Journal component - a form submission (future iteration: that will store in a backend api)
 import React from "react";
-import { CloseButton } from "react-bootstrap";
 
 export default function JournalForm() {
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    console.log("Form submitted!");
+  };
+
+  const handleReset = (e) => {
+    e.preventDefault();
+    console.log("Form reset!");
+  };
   return (
     <section className="journal-form">
       <div className="container">
         <div className="col-md-11">
           <div style={{ marginTop: `1em`, marginBottom: `17em` }}>
-            <form className="myForm">
+            <form
+              className="myForm"
+              onSubmit={handleSubmit}
+              onReset={handleReset}
+            >
               <h1 style={{ textAlign: `center`, paddingTop: `1em` }}>
                 New Journal Entry
               </h1>
               <section style={{ padding: `1em` }}>
-                <div
-                  className="mb-3"
-                  style={{ justifySelf: `left`, width: `100%` }}
-                >
+                <div style={{ justifyContent: `center`, alignItems: `center` }}>
                   <label
                     htmlFor="date"
                     className="form-label"
@@ -55,7 +64,7 @@ export default function JournalForm() {
                   <label
                     htmlFor="start-time"
                     className="form-label"
-                    id="start-time"
+                    id="form-label"
                     style={{ fontWeight: `bold`, color: `white` }}
                   >
                     Start:
@@ -103,7 +112,7 @@ export default function JournalForm() {
                 <div style={{ display: `flex`, justifyContent: `center` }}>
                   <button
                     type="submit"
-                    id="trigger-modal"
+                    id="submit"
                     className="btn-primary"
                     style={{
                       width: "40%",
@@ -114,7 +123,7 @@ export default function JournalForm() {
                     Submit
                   </button>
                   <button
-                    id="trigger-reset"
+                    id="reset"
                     className="btn-secondary"
                     style={{
                       width: "40%",
