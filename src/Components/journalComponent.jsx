@@ -3,7 +3,6 @@ import React from "react";
 import { CloseButton } from "react-bootstrap";
 
 export default function JournalForm() {
-  let entryText = "";
   return (
     <section className="journal-form">
       <div className="container">
@@ -32,11 +31,12 @@ export default function JournalForm() {
                       autoComplete="on"
                       className="form-control"
                       id="date"
+                      required="on"
                     />
                   </label>
                   <br />
                   <label
-                    htmlFor="date"
+                    htmlFor="miles"
                     className="form-label"
                     id="form-label"
                     style={{ fontWeight: `bold`, color: `white` }}
@@ -44,34 +44,67 @@ export default function JournalForm() {
                     Miles Logged:
                     <br />
                     <input
-                      type="text"
+                      type="number"
+                      step="any"
                       autoComplete="on"
                       className="form-control"
                       id="miles"
                     />
-                    <br />
-                    <div className="form-outline data-mdb-input-init">
-                      <textarea
-                        name="entry-body"
-                        id="entry"
-                        cols="30"
-                        rows="5"
-                        style={{
-                          width: `100%`,
-                          height: `10em`,
-                          borderRadius: `10px`,
-                        }}
-                      ></textarea>
-                    </div>
                   </label>
+                  <br />
+                  <label
+                    htmlFor="time"
+                    className="form-label"
+                    id="form-label"
+                    style={{ fontWeight: `bold`, color: `white` }}
+                  >
+                    Start:
+                    <br />
+                    <input
+                      type="time"
+                      className="form-control"
+                      id="start-time"
+                    />
+                  </label>
+                  <br />
+                  <label
+                    htmlFor="time"
+                    className="form-label"
+                    id="form-label"
+                    style={{ fontWeight: `bold`, color: `white` }}
+                  >
+                    Finish:
+                    <br />
+                    <input
+                      type="time"
+                      className="form-control"
+                      id="finish-time"
+                    />
+                  </label>
+                  <br /> <br />
+                  <div className="form-outline data-mdb-input-init">
+                    <textarea
+                      name="entry-body"
+                      autoCapitalize="sentences"
+                      autoCorrect="on"
+                      placeholder="New personal record..."
+                      id="entry"
+                      cols="30"
+                      rows="5"
+                      style={{
+                        width: `100%`,
+                        height: `10em`,
+                        borderRadius: `10px`,
+                        padding: `1em`,
+                      }}
+                    ></textarea>
+                  </div>
                 </div>
               </section>
             </form>
           </div>
         </div>
       </div>
-
-      {/* <p style={{ color: `white` }}> Today's Date: {currentDate}</p> */}
     </section>
   );
 }
