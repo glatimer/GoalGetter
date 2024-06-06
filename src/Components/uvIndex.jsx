@@ -7,7 +7,7 @@ import { uvColors } from "../utils/uv-colors";
 
 export default function UVIndex({ uvData }) {
   if (!uvData) {
-    return <div>UV index data not found.</div>;
+    return <div style={{ color: `red` }}>UV data not found.</div>;
   }
   let uvi = uvData;
   let advice = "";

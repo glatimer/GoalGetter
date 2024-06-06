@@ -6,7 +6,6 @@ import Maps from "../Components/map";
 import AirQuality from "../Components/airQuality";
 import UVIndex from "../Components/uvIndex";
 
-
 export function Home() {
   return (
     <>
@@ -21,9 +20,7 @@ export function Home() {
           <div className="weather">
             <Weather />
           </div>
-          <div className="aqi">
-            <AirQuality />
-          </div>
+
           <div className="map">
             <Maps />
           </div>

@@ -5,19 +5,27 @@ import GaugeComponent from "react-gauge-component";
 
 export default function AirQuality({ aqiData }) {
   if (!aqiData) {
-    return <div>Air quality data not found.</div>;
+    return <div style={{ color: `red` }}>Air quality data not found.</div>;
   }
-
   let { co, no2, o3, so2, pm2_5, pm10, "us-epa-index": epa } = aqiData;
+  let message = "";
 
-  // for testing
-  console.log("PM2.5 = ", pm2_5);
-  console.log("PM10 = ", pm10);
-  console.log("co = ", co);
-  console.log("so2 = ", so2);
-  console.log("no2 = ", no2);
-  console.log("o3 = ", o3);
-  console.log("epa", epa);
+  // Decipher Air Quality Grade and message
+  if (epa === 1) {
+    message = "Good";
+  } else if (epa === 2) {
+    message = "Moderate";
+  } else if (epa === 3) {
+    message = "Unhealthy for Sensitive Groups";
+  } else if (epa === 4) {
+    message = "Unhealthy";
+  } else if (epa === 5) {
+    message = "Very Unhealthy";
+  } else if (epa === 6) {
+    message = "Hazardous";
+  } else {
+    message = "Air Quality Undefined";
+  }
 
   // Prep each value for AQI calculation
   pm2_5 = Number.parseFloat(pm2_5).toFixed(1);
@@ -30,15 +38,6 @@ export default function AirQuality({ aqiData }) {
   no2 = Math.round(no2);
   o3 = (o3 * 24.45) / 48; // needs conversion to ppm
   o3 = Number.parseFloat(o3).toFixed(3);
-
-  // for testing
-  console.log("PM2.5 = ", pm2_5);
-  console.log("PM10 = ", pm10);
-  console.log("co = ", co);
-  console.log("so2 = ", so2);
-  console.log("no2 = ", no2);
-  console.log("o3 = ", o3);
-  console.log("epa", epa);
 
   // Calculate and store current AQIs
   const [pm2_5AQI, pm2_5grade] = calculateAQI(pm2_5, "pm2_5");
@@ -68,11 +67,6 @@ export default function AirQuality({ aqiData }) {
       finalGrade = element.grade;
     }
   });
-
-  // for testing
-  console.log("Final AQI = ", finalAQI);
-  console.log("Final Pollutant = ", finalName);
-  console.log("Final Grade = ", finalGrade);
 
   // create gauge using GaugeComponent
   return (
@@ -115,6 +109,11 @@ export default function AirQuality({ aqiData }) {
             animationDelay: 0,
           }}
         />
+      </div>
+      <div className="aqi-text">
+        <p style={{ color: `white`, fontWeight: `bold`, fontSize: `20px` }}>
+          {message}
+        </p>
       </div>
     </>
   );
