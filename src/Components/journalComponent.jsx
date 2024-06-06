@@ -49,12 +49,9 @@ export default function JournalForm() {
       <div className="container">
         <div className="col-md-11">
           <div style={{ marginTop: `1em`, marginBottom: `17em` }}>
-            <form
-              className="myForm"
-              style={{ backgroundColor: `white`, borderRadius: `2px` }}
-            >
+            <form className="myForm">
               <h1 style={{ textAlign: `center`, paddingTop: `1em` }}>
-                Journal Entry
+                New Entry
               </h1>
               <section style={{ padding: `1em` }}>
                 <div
@@ -64,13 +61,29 @@ export default function JournalForm() {
                   <label
                     htmlFor="date"
                     className="form-label"
-                    style={{ fontWeight: `bold` }}
+                    style={{ fontWeight: `bold`, color: `white` }}
                   >
                     {" "}
                     Today's Date
                     <br />
                     <input
                       placeholder={currentDate}
+                      type="date"
+                      autoComplete="on"
+                      className="form-control"
+                      name="date"
+                    />
+                  </label>
+                  <br />
+                  <label
+                    htmlFor="date"
+                    className="form-label"
+                    style={{ fontWeight: `bold`, color: `white` }}
+                  >
+                    {" "}
+                    Miles Logged:
+                    <br />
+                    <input
                       type="text"
                       autoComplete="on"
                       className="form-control"

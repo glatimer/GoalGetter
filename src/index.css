@@ -244,7 +244,7 @@ body .container-body {
 }
 
 .journal-form .container {
-  width: 50%;
+  width: 100%;
 }
 
 .journal-form {
@@ -257,6 +257,13 @@ body .container-body {
 .journal-form h1 {
   background-color: var(--bgColor);
   color: var(--textYellow);
+}
+
+.form-label {
+  display: flexbox;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
 }
 
 /* ------------------------------------- navbar.jsx ------------------------------------- */
